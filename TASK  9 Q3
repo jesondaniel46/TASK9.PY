@@ -1,0 +1,12 @@
+from functools import reduce
+
+# Define a lambda function to generate the next Fibonacci number
+fib = lambda x, _: x + [x[-1] + x[-2]]
+
+# Create a list with the first two Fibonacci numbers [0, 1]
+fibonacci_series = reduce(fib, range(48), [0, 1])
+
+# Add the first two numbers to complete the 50-element series
+fibonacci_series = [0, 1] + fibonacci_series
+
+print(fibonacci_series)

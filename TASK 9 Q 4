@@ -1,0 +1,27 @@
+import re
+
+def validate_regex(pattern, text):
+    if re.match(pattern, text):
+        return True
+    else:
+        return False
+
+# Validate Email Address
+email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+'
+email = 'example@email.com'
+print(f'Email Address Validation: {validate_regex(email_pattern, email)}')
+
+# Validate Mobile numbers of Bangladesh
+bangladesh_mobile_pattern = r'^\+8801[3-9]\d{8}$'
+mobile_number = '+8801712345678'
+print(f'Bangladesh Mobile Number Validation: {validate_regex(bangladesh_mobile_pattern, mobile_number)}')
+
+# Validate Telephone numbers of USA
+usa_telephone_pattern = r'^\(\d{3}\)\s\d{3}-\d{4}$'
+telephone_number = '(123) 456-7890'
+print(f'USA Telephone Number Validation: {validate_regex(usa_telephone_pattern, telephone_number)}')
+
+# Validate 16 character Alpha-Numeric password
+password_pattern = r'^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@#$%^&+=]).{16}$'
+password = 'Abc123@5678defG#'
+print(f'Password Validation: {validate_regex(password_pattern, password)}')
